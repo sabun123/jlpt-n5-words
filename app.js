@@ -4,7 +4,7 @@ class KanaGame {
         this.currentKana = null;
         this.correctReadings = new Set();
         this.selectedReadings = new Set();
-        this.currentLanguage = 'vn'; // Default to Vietnamese translations
+        this.currentLanguage = 'en'; // Changed default to English
         
         // Update element IDs to match new kana-focused naming
         this.kanaElement = document.getElementById('currentKana');
@@ -109,6 +109,7 @@ class KanaGame {
     initializeLanguageOptions() {
         const firstEntry = this.kanaData[0];
         const languages = {
+            'en': 'English',     // Added English
             'vn': 'Tiếng Việt',
             'my': 'Bahasa Melayu',
             'zh': '中文',
