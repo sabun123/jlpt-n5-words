@@ -256,53 +256,44 @@ class KanaGame {
     }
 
     getBestVoice() {
-        if (this.isMobile) {
-            // On iOS Safari, look for Samantha or Daniel (high quality voices)
-            const iosVoice = this.voices.find(voice =>
-                voice.lang.includes('en-US') && 
-                (voice.name.includes('Samantha') || voice.name.includes('Daniel'))
-            );
-            
-            if (iosVoice) return iosVoice;
+        const preferredJapaneseVoices = [
+            'Google じゃぱりちほー',  // Chrome Japanese voice
+            'Microsoft Nanami',     // Windows Japanese voice
+            'Microsoft Ayumi',      // Windows Japanese voice
+            'Kyoko',               // macOS/iOS Japanese voice
+            'Otoya',               // Japanese voice
+            'Google 日本語',        // Chrome Japanese voice
+        ];
 
-            // On Android, prefer Chrome's or Samsung's voices
-            const androidVoice = this.voices.find(voice =>
-                voice.lang.includes('en-US') && 
-                (voice.name.includes('Chrome') || voice.name.includes('Samsung'))
-            );
-
-            if (androidVoice) return androidVoice;
+        // Try to find preferred Japanese voices first
+        for (const voiceName of preferredJapaneseVoices) {
+            const voice = this.voices.find(v => v.name.includes(voiceName));
+            if (voice) return voice;
         }
 
-        // Desktop voice selection (existing logic)
-        const googleVoice = this.voices.find(voice =>
-            (voice.lang.includes('en-US') || voice.lang.includes('en-GB')) &&
-            voice.name.includes('Google')
+        // Try any Japanese voice
+        const japaneseVoice = this.voices.find(voice => 
+            voice.lang.includes('ja') || voice.lang.includes('ja-JP')
         );
+        if (japaneseVoice) return japaneseVoice;
 
-        if (googleVoice) return googleVoice;
+        if (this.isMobile) {
+            // iOS Safari specific handling
+            if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                return this.voices.find(voice => 
+                    voice.lang.includes('ja') || voice.name === 'Kyoko'
+                );
+            }
 
-        // Second try: Chrome's built-in voices
-        const chromeVoice = this.voices.find(voice =>
-            (voice.lang.includes('en-US') || voice.lang.includes('en-GB')) &&
-            (voice.name.includes('Chrome') || voice.name.includes('Edge'))
-        );
+            // Android specific handling
+            return this.voices.find(voice =>
+                (voice.lang.includes('ja') && 
+                (voice.name.includes('Chrome') || voice.name.includes('Samsung')))
+            );
+        }
 
-        if (chromeVoice) return chromeVoice;
-
-        // Third try: any native voice (these are usually better than Microsoft)
-        const nativeVoice = this.voices.find(voice =>
-            (voice.lang.includes('en-US') || voice.lang.includes('en-GB')) &&
-            !voice.name.includes('Microsoft') &&
-            voice.localService
-        );
-
-        if (nativeVoice) return nativeVoice;
-
-        // Last resort: any English voice
-        return this.voices.find(voice =>
-            voice.lang.includes('en-US') || voice.lang.includes('en-GB')
-        );
+        // Last resort: return any available voice
+        return this.voices[0];
     }
 
     async playAudio(text) {
@@ -314,53 +305,9 @@ class KanaGame {
         // Cancel any ongoing speech
         window.speechSynthesis.cancel();
 
-        if (this.isMobile) {
-            // Mobile-specific settings
-            const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'en-US';
-            utterance.rate = 0.9;    // Slightly faster on mobile
-            utterance.pitch = 1.0;
-            utterance.volume = 1.0;
-
-            const bestVoice = this.getBestVoice();
-            if (bestVoice) {
-                utterance.voice = bestVoice;
-            }
-
-            // iOS Safari workaround for speech synthesis issues
-            if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                // Split longer phrases into words
-                const words = text.split(' ');
-                for (const word of words) {
-                    const wordUtterance = new SpeechSynthesisUtterance(word);
-                    wordUtterance.lang = 'en-US';
-                    wordUtterance.rate = 0.9;
-                    wordUtterance.voice = bestVoice;
-                    
-                    await new Promise(resolve => {
-                        wordUtterance.onend = resolve;
-                        wordUtterance.onerror = resolve;
-                        window.speechSynthesis.speak(wordUtterance);
-                    });
-                    
-                    // Small pause between words
-                    await new Promise(r => setTimeout(r, 100));
-                }
-                return;
-            }
-
-            // Android handling
-            return new Promise(resolve => {
-                utterance.onend = resolve;
-                utterance.onerror = resolve;
-                window.speechSynthesis.speak(utterance);
-            });
-        }
-
-        // Desktop handling (existing code)
         const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'en-US';
-        utterance.rate = 0.8;
+        utterance.lang = 'ja-JP';  // Set language to Japanese
+        utterance.rate = 0.8;      // Slightly slower for clearer pronunciation
         utterance.pitch = 1.0;
         utterance.volume = 1.0;
 
@@ -369,6 +316,29 @@ class KanaGame {
             utterance.voice = bestVoice;
         }
 
+        // iOS Safari workaround
+        // if (this.isMobile && /iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        //     // Split text into smaller chunks if it contains multiple characters
+        //     const chunks = text.split('');
+        //     for (const chunk of chunks) {
+        //         const chunkUtterance = new SpeechSynthesisUtterance(chunk);
+        //         chunkUtterance.lang = 'ja-JP';
+        //         chunkUtterance.rate = 0.8;
+        //         chunkUtterance.voice = bestVoice;
+                
+        //         await new Promise(resolve => {
+        //             chunkUtterance.onend = resolve;
+        //             chunkUtterance.onerror = resolve;
+        //             window.speechSynthesis.speak(chunkUtterance);
+        //         });
+                
+        //         // Small pause between characters
+        //         // await new Promise(r => setTimeout(r, 150));
+        //     }
+        //     return;
+        // }
+
+        // For other browsers/devices
         return new Promise((resolve) => {
             utterance.onend = () => resolve();
             utterance.onerror = () => resolve();
