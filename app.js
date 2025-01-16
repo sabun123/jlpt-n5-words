@@ -191,20 +191,27 @@ class KanaGame {
     async showNextKana() {
         const previousKana = this.currentKana;
         this.currentKana = this.getRandomKana();
-        // Set correct readings from current language
         this.correctReadings = new Set(this.currentKana.translations[this.currentLanguage]);
         this.selectedReadings = new Set();
         
-        // Animate out current kanji
         if (previousKana) {
             this.kanaElement.classList.add('kana-exit');
             await new Promise(r => setTimeout(r, 300));
         }
 
-        // Update content
+        // Update content and adjust font size only for mobile
         this.kanaElement.textContent = this.currentKana.word;
+        if (this.isMobile) {
+            this.kanaElement.style.fontSize = this.currentKana.word.length > 3 ? '2rem' : '3rem';
+        } else {
+            this.kanaElement.style.fontSize = '8rem'; // Default desktop size
+        }
+
         const translationElement = document.getElementById('translation');
         translationElement.textContent = this.currentKana.ipa_pronunciation.join(', ');
+        translationElement.style.fontSize = '1rem'; // Smaller font size for IPA
+        translationElement.style.marginTop = '0.5rem'; // Add space between word and IPA
+        
         this.kanaElement.setAttribute('aria-label', 
             `Current kana: ${this.currentKana.word}, IPA: ${this.currentKana.ipa_pronunciation.join(', ')}`);
         
