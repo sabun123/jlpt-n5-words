@@ -1774,5 +1774,869 @@ const data = [
             ja: ["お先に失礼します"],
             ar: ["عذرًا على المغادرة المبكرة"]
         },
+    },
+    {
+        word: "高い",
+        ipa_pronunciation: ["takaːi"],
+        translations: {
+            en: ["high", "expensive"],
+            vn: ["cao", "đắt"],
+            my: ["tinggi", "mahal"],
+            zh: ["高", "贵"],
+            ja: ["たかい"],
+            ar: ["عالي", "غالي"]
+        },
+    },
+    {
+        word: "安い",
+        ipa_pronunciation: ["yasɯi"],
+        translations: {
+            en: ["cheap"],
+            vn: ["rẻ"],
+            my: ["murah"],
+            zh: ["便宜"],
+            ja: ["やすい"],
+            ar: ["رخيص"]
+        },
+    },
+    {
+        word: "新しい",
+        ipa_pronunciation: ["atarasikɯ"],
+        translations: {
+            en: ["new"],
+            vn: ["mới"],
+            my: ["baru"],
+            zh: ["新"],
+            ja: ["あたらしい"],
+            ar: ["جديد"]
+        },
+    },
+    {
+        word: "古い",
+        ipa_pronunciation: ["fɯɾɯɕi"],
+        translations: {
+            en: ["old"],
+            vn: ["cũ"],
+            my: ["lama"],
+            zh: ["旧"],
+            ja: ["ふるい"],
+            ar: ["قديم"]
+        },
+    },
+    {
+        word: "早い",
+        ipa_pronunciation: ["hayai"],
+        translations: {
+            en: ["early", "fast"],
+            vn: ["sớm", "nhanh"],
+            my: ["awal", "cepat"],
+            zh: ["早"],
+            ja: ["はやい"],
+            ar: ["مبكر", "سريع"]
+        },
+    },
+    {
+        word: "遅い",
+        ipa_pronunciation: ["okuɾoi"],
+        translations: {
+            en: ["late", "slow"],
+            vn: ["muộn", "chậm"],
+            my: ["lewat", "lambat"],
+            zh: ["晚", "慢"],
+            ja: ["おそい"],
+            ar: ["متأخر", "بطيء"]
+        },
+    },
+    {
+        word: "長い",
+        ipa_pronunciation: ["naŋɡai"],
+        translations: {
+            en: ["long"],
+            vn: ["dài"],
+            my: ["panjang"],
+            zh: ["长"],
+            ja: ["ながい"],
+            ar: ["طويل"]
+        },
+    },
+    {
+        word: "短い",
+        ipa_pronunciation: ["mijikaɪ"],
+        translations: {
+            en: ["short"],
+            vn: ["ngắn"],
+            my: ["pendek"],
+            zh: ["短"],
+            ja: ["みじかい"],
+            ar: ["قصير"]
+        },
+    },
+    {
+        word: "大きい",
+        ipa_pronunciation: ["oːkii"],
+        translations: {
+            en: ["big"],
+            vn: ["lớn"],
+            my: ["besar"],
+            zh: ["大"],
+            ja: ["おおきい"],
+            ar: ["كبير"]
+        },
+    },
+    {
+        word: "小さい",
+        ipa_pronunciation: ["tɕisiː"],
+        translations: {
+            en: ["small"],
+            vn: ["nhỏ"],
+            my: ["kecil"],
+            zh: ["小"],
+            ja: ["ちいさい"],
+            ar: ["صغير"]
+        },
+    },
+    {
+        word: "広い",
+        ipa_pronunciation: ["hiroi"],
+        translations: {
+            en: ["wide", "spacious"],
+            vn: ["rộng"],
+            my: ["luas"],
+            zh: ["宽"],
+            ja: ["ひろい"],
+            ar: ["واسع"]
+        },
+    },
+    {
+        word: "狭い",
+        ipa_pronunciation: ["seːtɕi"],
+        translations: {
+            en: ["narrow"],
+            vn: ["hẹp"],
+            my: ["sempit"],
+            zh: ["窄"],
+            ja: ["せまい"],
+            ar: ["ضيق"]
+        },
+    },
+    {
+        word: "重い",
+        ipa_pronunciation: ["omoːi"],
+        translations: {
+            en: ["heavy"],
+            vn: ["nặng"],
+            my: ["berat"],
+            zh: ["重"],
+            ja: ["おもい"],
+            ar: ["ثقيل"]
+        },
+    },
+    {
+        word: "軽い",
+        ipa_pronunciation: ["karɯi"],
+        translations: {
+            en: ["light"],
+            vn: ["nhẹ"],
+            my: ["ringan"],
+            zh: ["轻"],
+            ja: ["かるい"],
+            ar: ["خفيف"]
+        },
+    },
+    {
+        word: "良い",
+        ipa_pronunciation: ["joːi"],
+        translations: {
+            en: ["good"],
+            vn: ["tốt"],
+            my: ["baik"],
+            zh: ["好"],
+            ja: ["よい"],
+            ar: ["جيد"]
+        },
+    },
+    {
+        word: "悪い",
+        ipa_pronunciation: ["warɯi"],
+        translations: {
+            en: ["bad"],
+            vn: ["xấu"],
+            my: ["buruk"],
+            zh: ["坏"],
+            ja: ["わるい"],
+            ar: ["سيء"]
+        },
+    },
+    {
+        word: "難しい",
+        ipa_pronunciation: ["muzaɾɯi"],
+        translations: {
+            en: ["difficult"],
+            vn: ["khó"],
+            my: ["susah"],
+            zh: ["难"],
+            ja: ["むずかしい"],
+            ar: ["صعب"]
+        },
+    },
+    {
+        word: "簡単",
+        ipa_pronunciation: ["kaɴtaːn"],
+        translations: {
+            en: ["easy"],
+            vn: ["dễ"],
+            my: ["mudah"],
+            zh: ["简单"],
+            ja: ["かんたん"],
+            ar: ["سهل"]
+        },
+    },
+    {
+        word: "多い",
+        ipa_pronunciation: ["oːi"],
+        translations: {
+            en: ["many"],
+            vn: ["nhiều"],
+            my: ["banyak"],
+            zh: ["多"],
+            ja: ["おおい"],
+            ar: ["كثير"]
+        },
+    },
+    {
+        word: "少ない",
+        ipa_pronunciation: ["sɯkoʃii"],
+        translations: {
+            en: ["few"],
+            vn: ["ít"],
+            my: ["sedikit"],
+            zh: ["少"],
+            ja: ["すくない"],
+            ar: ["قليل"]
+        },
+    },
+    {
+        word: "忙しい",
+        ipa_pronunciation: ["isoɡaɕiː"],
+        translations: {
+            en: ["busy"],
+            vn: ["bận rộn"],
+            my: ["sibuk"],
+            zh: ["忙"],
+            ja: ["いそがしい"],
+            ar: ["مشغول"]
+        },
+    },
+    {
+        word: "静か",
+        ipa_pronunciation: ["ʃizɯka"],
+        translations: {
+            en: ["quiet"],
+            vn: ["yên tĩnh"],
+            my: ["sunyi"],
+            zh: ["安静"],
+            ja: ["しずか"],
+            ar: ["هادئ"]
+        },
+    },
+    {
+        word: "暑い",
+        ipa_pronunciation: ["atsɯi"],
+        translations: {
+            en: ["hot"],
+            vn: ["nóng"],
+            my: ["panas"],
+            zh: ["热"],
+            ja: ["あつい"],
+            ar: ["حار"]
+        },
+    },
+    {
+        word: "寒い",
+        ipa_pronunciation: ["samɯi"],
+        translations: {
+            en: ["cold"],
+            vn: ["lạnh"],
+            my: ["dingin"],
+            zh: ["冷"],
+            ja: ["さむい"],
+            ar: ["بارد"]
+        },
+    },
+    {
+        word: "暖かい",
+        ipa_pronunciation: ["atatakai"],
+        translations: {
+            en: ["warm"],
+            vn: ["ấm áp"],
+            my: ["hangat"],
+            zh: ["温暖"],
+            ja: ["あったかい"],
+            ar: ["دافئ"]
+        },
+    },
+    {
+        word: "涼しい",
+        ipa_pronunciation: ["suɾusʰii"],
+        translations: {
+            en: ["cool"],
+            vn: ["mát mẻ"],
+            my: ["sejuk"],
+            zh: ["凉爽"],
+            ja: ["すずしい"],
+            ar: ["معتدل"]
+        },
+    },
+    {
+        word: "明るい",
+        ipa_pronunciation: ["akɯɾai"],
+        translations: {
+            en: ["bright"],
+            vn: ["sáng"],
+            my: ["cerah"],
+            zh: ["明亮"],
+            ja: ["あかるい"],
+            ar: ["مضيء"]
+        },
+    },
+    {
+        word: "暗い",
+        ipa_pronunciation: ["kuɾai"],
+        translations: {
+            en: ["dark"],
+            vn: ["tối"],
+            my: ["gelap"],
+            zh: ["黑暗"],
+            ja: ["くらい"],
+            ar: ["مظلم"]
+        },
+    },
+    {
+        word: "甘い",
+        ipa_pronunciation: ["amaːi"],
+        translations: {
+            en: ["sweet"],
+            vn: ["ngọt"],
+            my: ["manis"],
+            zh: ["甜"],
+            ja: ["あまい"],
+            ar: ["حلو"]
+        },
+    },
+    {
+        word: "苦い",
+        ipa_pronunciation: ["niːi"],
+        translations: {
+            en: ["bitter"],
+            vn: ["đắng"],
+            my: ["pahit"],
+            zh: ["苦"],
+            ja: ["にがい"],
+            ar: ["مر"]
+        },
+    },
+    {
+        word: "辛い",
+        ipa_pronunciation: ["kaɾai"],
+        translations: {
+            en: ["spicy", "tough"],
+            vn: ["cay", "khổ"],
+            my: ["pedas", "sukar"],
+            zh: ["辣", "辛苦"],
+            ja: ["からい"],
+            ar: ["حار", "صعب"]
+        },
+    },
+    {
+        word: "酸っぱい",
+        ipa_pronunciation: ["suppaːi"],
+        translations: {
+            en: ["sour"],
+            vn: ["chua"],
+            my: ["masam"],
+            zh: ["酸"],
+            ja: ["すっぱい"],
+            ar: ["حامض"]
+        },
+    },
+    {
+        word: "塩辛い",
+        ipa_pronunciation: ["ɕiozaɾai"],
+        translations: {
+            en: ["salty"],
+            vn: ["mặn"],
+            my: ["asin"],
+            zh: ["咸"],
+            ja: ["しおからい"],
+            ar: ["مالح"]
+        },
+    },
+    {
+        word: "美味しい",
+        ipa_pronunciation: ["oːɕii"],
+        translations: {
+            en: ["delicious"],
+            vn: ["ngon"],
+            my: ["enak"],
+            zh: ["美味"],
+            ja: ["おいしい"],
+            ar: ["لذيذ"]
+        },
+    },
+    {
+        word: "嫌い",
+        ipa_pronunciation: ["kiɾai"],
+        translations: {
+            en: ["dislike"],
+            vn: ["ghét"],
+            my: ["benci"],
+            zh: ["讨厌"],
+            ja: ["きらい"],
+            ar: ["يكره"]
+        },
+    },
+    {
+        word: "好き",
+        ipa_pronunciation: ["suki"],
+        translations: {
+            en: ["like"],
+            vn: ["thích"],
+            my: ["suka"],
+            zh: ["喜欢"],
+            ja: ["すき"],
+            ar: ["يحب"]
+        },
+    },
+    {
+        word: "上手",
+        ipa_pronunciation: ["uːdeːteɾu"],
+        translations: {
+            en: ["good at"],
+            vn: ["giỏi"],
+            my: ["pakar"],
+            zh: ["擅长"],
+            ja: ["うまい"],
+            ar: ["بمهارة"]
+        },
+    },
+    {
+        word: "下手",
+        ipa_pronunciation: ["heːteːteɾu"],
+        translations: {
+            en: ["bad at"],
+            vn: ["kém"],
+            my: ["kurang baik"],
+            zh: ["不擅长"],
+            ja: ["へた"],
+            ar: ["بضعف"]
+        },
+    },
+    {
+        word: "面白い",
+        ipa_pronunciation: ["omosiroi"],
+        translations: {
+            en: ["interesting"],
+            vn: ["thú vị"],
+            my: ["menarik"],
+            zh: ["有趣"],
+            ja: ["おもしろい"],
+            ar: ["مثير للاهتمام"]
+        },
+    },
+    {
+        word: "退屈",
+        ipa_pronunciation: ["taibutsu"],
+        translations: {
+            en: ["boring"],
+            vn: ["nhàm chán"],
+            my: ["bosan"],
+            zh: ["无聊"],
+            ja: ["たいくつ"],
+            ar: ["ممل"]
+        },
+    },
+    {
+        word: "楽しい",
+        ipa_pronunciation: ["tanoshiː"],
+        translations: {
+            en: ["fun", "enjoyable"],
+            vn: ["vui vẻ"],
+            my: ["bersenang-senang"],
+            zh: ["快乐"],
+            ja: ["たのしい"],
+            ar: ["متعة"]
+        },
+    },
+    {
+        word: "悲しい",
+        ipa_pronunciation: ["kanɑɕiː"],
+        translations: {
+            en: ["sad"],
+            vn: ["buồn"],
+            my: ["sedih"],
+            zh: ["悲伤"],
+            ja: ["かなしい"],
+            ar: ["حزين"]
+        },
+    },
+    {
+        word: "嬉しい",
+        ipa_pronunciation: ["ureɕiː"],
+        translations: {
+            en: ["happy"],
+            vn: ["vui mừng"],
+            my: ["gembira"],
+            zh: ["高兴"],
+            ja: ["うれしい"],
+            ar: ["سعيد"]
+        },
+    },
+    {
+        word: "怖い",
+        ipa_pronunciation: ["koraːi"],
+        translations: {
+            en: ["scary"],
+            vn: ["sợ hãi"],
+            my: ["seram"],
+            zh: ["可怕"],
+            ja: ["こわい"],
+            ar: ["مخيف"]
+        },
+    },
+    {
+        word: "怒る",
+        ipa_pronunciation: ["okaɾu"],
+        translations: {
+            en: ["angry"],
+            vn: ["giận dữ"],
+            my: ["marah"],
+            zh: ["生气"],
+            ja: ["おこる"],
+            ar: ["غاضب"]
+        },
+    },
+    {
+        word: "驚く",
+        ipa_pronunciation: ["odzɯɾu"],
+        translations: {
+            en: ["surprised"],
+            vn: ["ngạc nhiên"],
+            my: ["terkejut"],
+            zh: ["惊讶"],
+            ja: ["おどろく"],
+            ar: ["مندهش"]
+        },
+    },
+    {
+        word: "疲れる",
+        ipa_pronunciation: ["tukareɾu"],
+        translations: {
+            en: ["tired"],
+            vn: ["mệt mỏi"],
+            my: ["letih"],
+            zh: ["累"],
+            ja: ["つかれる"],
+            ar: ["متعب"]
+        },
+    },
+    {
+        word: "元気",
+        ipa_pronunciation: ["geŋki"],
+        translations: {
+            en: ["energetic"],
+            vn: ["sức khỏe"],
+            my: ["sihat"],
+            zh: ["精神"],
+            ja: ["げんき"],
+            ar: ["نشيط"]
+        },
+    },
+    {
+        word: "病気",
+        ipa_pronunciation: ["byoːki"],
+        translations: {
+            en: ["sick"],
+            vn: ["bệnh"],
+            my: ["sakit"],
+            zh: ["生病"],
+            ja: ["びょうき"],
+            ar: ["مريض"]
+        },
+    },
+    {
+        word: "丈夫",
+        ipa_pronunciation: ["daːndʑoːbu"],
+        translations: {
+            en: ["healthy", "strong"],
+            vn: ["khỏe mạnh", "mạnh mẽ"],
+            my: ["sihat", "kuat"],
+            zh: ["健康", "强壮"],
+            ja: ["じょうぶ"],
+            ar: ["صحي", "قوي"]
+        },
+    },
+    {
+        word: "弱い",
+        ipa_pronunciation: ["yowaːi"],
+        translations: {
+            en: ["weak"],
+            vn: ["yếu"],
+            my: ["lemah"],
+            zh: ["弱"],
+            ja: ["よわい"],
+            ar: ["ضعيف"]
+        },
+    },
+    {
+        word: "強い",
+        ipa_pronunciation: ["tsuyoːi"],
+        translations: {
+            en: ["strong"],
+            vn: ["mạnh mẽ"],
+            my: ["kuat"],
+            zh: ["强"],
+            ja: ["つよい"],
+            ar: ["قوي"]
+        },
+    },
+    {
+        word: "安全",
+        ipa_pronunciation: ["aŋzen"],
+        translations: {
+            en: ["safe"],
+            vn: ["an toàn"],
+            my: ["selamat"],
+            zh: ["安全"],
+            ja: ["あんぜん"],
+            ar: ["آمن"]
+        },
+    },
+    {
+        word: "危険",
+        ipa_pronunciation: ["kikeɴ"],
+        translations: {
+            en: ["dangerous"],
+            vn: ["nguy hiểm"],
+            my: ["bahaya"],
+            zh: ["危险"],
+            ja: ["きけん"],
+            ar: ["خطير"]
+        },
+    },
+    {
+        word: "便利",
+        ipa_pronunciation: ["beːneːki"],
+        translations: {
+            en: ["convenient"],
+            vn: ["tiện lợi"],
+            my: ["berguna"],
+            zh: ["方便"],
+            ja: ["べんり"],
+            ar: ["مريح"]
+        },
+    },
+    {
+        word: "不便",
+        ipa_pronunciation: ["fuːbeːneːki"],
+        translations: {
+            en: ["inconvenient"],
+            vn: ["không tiện lợi"],
+            my: ["tidak berguna"],
+            zh: ["不方便"],
+            ja: ["ふべん"],
+            ar: ["غير مريح"]
+        },
+    },
+    {
+        word: "速い",
+        ipa_pronunciation: ["haʔsoi"],
+        translations: {
+            en: ["fast"],
+            vn: ["nhanh"],
+            my: ["cepat"],
+            zh: ["快"],
+            ja: ["はやい"],
+            ar: ["سريع"]
+        },
+    },
+    {
+        word: "遅い",
+        ipa_pronunciation: ["okuɾoi"],
+        translations: {
+            en: ["slow"],
+            vn: ["chậm"],
+            my: ["lambat"],
+            zh: ["慢"],
+            ja: ["おそい"],
+            ar: ["بطيء"]
+        },
+    },
+    {
+        word: "遠い",
+        ipa_pronunciation: ["toːi"],
+        translations: {
+            en: ["far"],
+            vn: ["xa"],
+            my: ["jauh"],
+            zh: ["远"],
+            ja: ["とおい"],
+            ar: ["بعيد"]
+        },
+    },
+    {
+        word: "近い",
+        ipa_pronunciation: ["chiːkaɪ"],
+        translations: {
+            en: ["near"],
+            vn: ["gần"],
+            my: ["dekat"],
+            zh: ["近"],
+            ja: ["ちかい"],
+            ar: ["قريب"]
+        },
+    },
+    {
+        word: "高い",
+        ipa_pronunciation: ["takaːi"],
+        translations: {
+            en: ["high", "expensive"],
+            vn: ["cao", "đắt"],
+            my: ["tinggi", "mahal"],
+            zh: ["高", "贵"],
+            ja: ["たかい"],
+            ar: ["عالي", "غالي"]
+        },
+    },
+    {
+        word: "低い",
+        ipa_pronunciation: ["hikuɾoi"],
+        translations: {
+            en: ["low"],
+            vn: ["thấp"],
+            my: ["rendah"],
+            zh: ["低"],
+            ja: ["ひくい"],
+            ar: ["منخفض"]
+        },
+    },
+    {
+        word: "重い",
+        ipa_pronunciation: ["omoːi"],
+        translations: {
+            en: ["heavy"],
+            vn: ["nặng"],
+            my: ["berat"],
+            zh: ["重"],
+            ja: ["おもい"],
+            ar: ["ثقيل"]
+        },
+    },
+    {
+        word: "軽い",
+        ipa_pronunciation: ["karɯi"],
+        translations: {
+            en: ["light"],
+            vn: ["nhẹ"],
+            my: ["ringan"],
+            zh: ["轻"],
+            ja: ["かるい"],
+            ar: ["خفيف"]
+        },
+    },
+    {
+        word: "乾燥する",
+        ipa_pronunciation: ["kansoːsuɾu"],
+        translations: {
+            en: ["dry"],
+            vn: ["khô"],
+            my: ["kering"],
+            zh: ["干燥"],
+            ja: ["かんそうする"],
+            ar: ["جاف"]
+        },
+    },
+    {
+        word: "濡れる",
+        ipa_pronunciation: ["nuɾeɾu"],
+        translations: {
+            en: ["wet"],
+            vn: ["ướt"],
+            my: ["basah"],
+            zh: ["湿"],
+            ja: ["ぬれる"],
+            ar: ["رطب"]
+        },
+    },
+    {
+        word: "乾く",
+        ipa_pronunciation: ["huɾaku"],
+        translations: {
+            en: ["dry (intransitive)"],
+            vn: ["khô đi"],
+            my: ["kering"],
+            zh: ["变干"],
+            ja: ["かわく"],
+            ar: ["يجف"]
+        },
+    },
+    {
+        word: "温かい",
+        ipa_pronunciation: ["atatakai"],
+        translations: {
+            en: ["warm"],
+            vn: ["ấm áp"],
+            my: ["hangat"],
+            zh: ["温暖"],
+            ja: ["あったかい"],
+            ar: ["دافئ"]
+        },
+    },
+    {
+        word: "冷たい",
+        ipa_pronunciation: ["tsuɾetai"],
+        translations: {
+            en: ["cold (touch)"],
+            vn: ["lạnh (cảm giác)"],
+            my: ["sejuk"],
+            zh: ["冷"],
+            ja: ["つめたい"],
+            ar: ["بارد"]
+        },
+    },
+    {
+        word: "熱い",
+        ipa_pronunciation: ["atsuːi"],
+        translations: {
+            en: ["hot (touch)"],
+            vn: ["nóng (cảm giác)"],
+            my: ["panas"],
+            zh: ["烫"],
+            ja: ["あつい"],
+            ar: ["حار"]
+        },
+    },
+    {
+        word: "冷える",
+        ipa_pronunciation: ["huɾeɾu"],
+        translations: {
+            en: ["get cold"],
+            vn: ["trở nên lạnh"],
+            my: ["dingin"],
+            zh: ["变冷"],
+            ja: ["ひえる"],
+            ar: ["يبرد"]
+        },
+    },
+    {
+        word: "暖める",
+        ipa_pronunciation: ["atametaɾu"],
+        translations: {
+            en: ["warm up"],
+            vn: ["làm ấm"],
+            my: ["hangatkan"],
+            zh: ["加热"],
+            ja: ["あたためる"],
+            ar: ["يسخن"]
+        },
     }
 ];
