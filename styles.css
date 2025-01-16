@@ -619,3 +619,19 @@ body.dark-mode .reading-option.incorrect,
     outline: 2px solid var(--text-color);
     outline-offset: 2px;
 }
+
+.progress-counter {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    color: #666;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.progress-counter.hidden {
+    display: none;
+}
+
+.dark-mode .progress-counter {
+    color: #aaa;
+}

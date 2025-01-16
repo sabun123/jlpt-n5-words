@@ -17,6 +17,9 @@ class KanaGame {
         this.closePopupButton = document.getElementById('closePopup');
         this.languageSelect = document.getElementById('languageSelect');
         this.isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        this.progressCounter = document.getElementById('progress-counter');
+        this.currentCorrectSpan = document.getElementById('current-correct');
+        this.totalCorrectSpan = document.getElementById('total-correct');
 
         // Footer copyright
         const currentYear = new Date().getFullYear();
@@ -219,6 +222,17 @@ class KanaGame {
         this.correctReadings = new Set(this.currentKana.translations[this.currentLanguage]);
         this.selectedReadings = new Set();
         
+        // Update progress counter visibility and totals
+        if (this.correctReadings.size > 1) {
+            this.progressCounter.classList.remove('hidden');
+            this.currentCorrectSpan.textContent = '0';
+            this.totalCorrectSpan.textContent = this.correctReadings.size;
+            this.progressCounter.setAttribute('aria-label', 
+                `Need ${this.correctReadings.size} correct answers`);
+        } else {
+            this.progressCounter.classList.add('hidden');
+        }
+
         if (previousKana) {
             this.kanaElement.classList.add('kana-exit');
             await new Promise(r => setTimeout(r, 300)); // Ensure this matches CSS transition duration
@@ -402,9 +416,21 @@ class KanaGame {
             button.setAttribute('aria-pressed', 'true');
             this.selectedReadings.add(reading);
             
+            // Update progress counter
+            if (this.correctReadings.size > 1) {
+                this.currentCorrectSpan.textContent = this.selectedReadings.size;
+                this.progressCounter.setAttribute('aria-label', 
+                    `${this.selectedReadings.size} of ${this.correctReadings.size} correct answers`);
+            }
+
             // Play the kana character when correct
             this.playAudio(this.currentKana.word);
-            showAnnouncement('Correct reading!', true);
+            showAnnouncement(
+                this.correctReadings.size > 1 && this.selectedReadings.size < this.correctReadings.size
+                    ? 'Correct! Keep going...'
+                    : 'Correct reading!',
+                true
+            );
     
             if (this.selectedReadings.size === this.correctReadings.size) {
                 this.successIndicator.classList.remove('hidden');
