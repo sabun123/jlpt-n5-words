@@ -170,7 +170,17 @@ class KanaGame {
     }
 
     getRandomKana() {
-        return this.kanaData[Math.floor(Math.random() * this.kanaData.length)];
+        if (this.kanaData.length === 0) {
+            console.error('No kana data available');
+            return null;
+        }
+    
+        let randomKana;
+        do {
+            randomKana = this.kanaData[Math.floor(Math.random() * this.kanaData.length)];
+        } while (this.kanaData.length > 1 && randomKana === this.currentKana);
+    
+        return randomKana;
     }
 
     getAllPossibleReadings() {
@@ -211,9 +221,9 @@ class KanaGame {
         
         if (previousKana) {
             this.kanaElement.classList.add('kana-exit');
-            await new Promise(r => setTimeout(r, 300));
+            await new Promise(r => setTimeout(r, 300)); // Ensure this matches CSS transition duration
         }
-
+    
         // Update content and adjust font size only for mobile
         this.kanaElement.textContent = this.currentKana.word;
         if (this.isMobile) {
@@ -221,7 +231,7 @@ class KanaGame {
         } else {
             this.kanaElement.style.fontSize = '8rem'; // Default desktop size
         }
-
+    
         const translationElement = document.getElementById('translation');
         translationElement.textContent = this.currentKana.ipa_pronunciation.join(', ');
         translationElement.style.fontSize = '1rem'; // Smaller font size for IPA
@@ -233,7 +243,7 @@ class KanaGame {
         this.successIndicator.classList.add('hidden');
         
         this.displayReadingOptions();
-
+    
         // Animate in new kanji
         this.kanaElement.classList.add('kana-enter');
         requestAnimationFrame(() => {
@@ -370,7 +380,7 @@ class KanaGame {
 
     handleReadingSelection(button, reading) {
         if (button.classList.contains('disabled')) return;
-
+    
         const showAnnouncement = (message, isCorrect) => {
             const announcement = document.createElement('div');
             announcement.className = `announcement ${isCorrect ? 'correct' : 'incorrect'}`;
@@ -395,7 +405,7 @@ class KanaGame {
             // Play the kana character when correct
             this.playAudio(this.currentKana.word);
             showAnnouncement('Correct reading!', true);
-
+    
             if (this.selectedReadings.size === this.correctReadings.size) {
                 this.successIndicator.classList.remove('hidden');
                 this.successIndicator.classList.add('visible');
