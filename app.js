@@ -184,8 +184,23 @@ class KanaGame {
     getWrongReadings(count) {
         const allReadings = Array.from(this.getAllPossibleReadings())
             .filter(reading => !this.correctReadings.has(reading));
-        const shuffled = allReadings.sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, count);
+        
+        // If we don't have enough wrong readings, get all possible readings again
+        if (allReadings.length < count) {
+            // Get all readings except the current word's readings
+            const allPossibleReadings = Array.from(this.getAllPossibleReadings())
+                .filter(reading => !this.currentKana.translations[this.currentLanguage].includes(reading));
+            
+            // Shuffle and return the requested count
+            return allPossibleReadings
+                .sort(() => 0.5 - Math.random())
+                .slice(0, count);
+        }
+
+        // Original logic if we have enough wrong readings
+        return allReadings
+            .sort(() => 0.5 - Math.random())
+            .slice(0, count);
     }
 
     async showNextKana() {
